@@ -1,6 +1,7 @@
 // app/page.js
-import Hero from "./components/Hero";
+'use client'
+import AboutMe from "./components/AboutMe";
 
 export default function HomePage() {
-  return <Hero />;
+  return <AboutMe />;
 }

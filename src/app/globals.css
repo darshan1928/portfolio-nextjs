@@ -7,16 +7,115 @@ body {
   box-sizing: border-box;
 }
 :root {
-  --primary-bg-gradient: red;
-  --primary-text: green;
+  --primary-bg: #f5f5f5;
+  --secondary-bg: #f2f2f3;
+  --secondary-bg-two: #e5e5e6;
+  --primary-text: #b37b00;
+  --secondary-text: #333333;
+
+
+   --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(240, 1%, 25%) 3%,
+    hsl(0, 0%, 19%) 97%
+  );
+  --bg-gradient-jet: linear-gradient(
+    to bottom right,
+    hsla(240, 1%, 18%, 0.251) 0%,
+    hsla(240, 2%, 11%, 0) 100%
+  ), hsl(240, 2%, 13%);
+  --bg-gradient-yellow-1: linear-gradient(
+    to bottom right,
+    hsl(45, 100%, 71%) 0%,
+    hsla(36, 100%, 69%, 0) 50%
+  );
+  --bg-gradient-yellow-2: linear-gradient(
+    135deg,
+    hsla(45, 100%, 71%, 0.251) 0%,
+    hsla(35, 100%, 68%, 0) 59.86%
+  ), hsl(240, 2%, 13%);
+
+  /* Solid colors */
+  --jet: hsl(0, 0%, 22%);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+
+  /* Typography & Sizing */
+  --fs-6: 14px;
+
+  /* Shadows */
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+
+  /* Transitions */
+  --transition-1: 0.25s ease;
+   /* … your existing vars … */
+
+  /* gradient used for the little timeline dots */
+  --text-gradient-yellow: linear-gradient(
+    to right,
+    hsl(45, 100%, 72%),
+    hsl(35, 100%, 68%)
+  );
+
+  /* border‐gradient used around the icon boxes */
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
+    hsla(0, 0%, 25%, 0) 50%
+  );
+
+  /* the shadow-1 utility */
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+
+  /* You already have --shadow-3 but if you need it in globals too: */
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
 }
 
 .dark {
-  --primary-bg-gradient: blue;
-  --primary-text: #fff;
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1f;
+  --secondary-bg-two: #282829;
+  --primary-text: #fdc864;
+  --secondary-text: #f8f8f4;
 }
 
-@theme {
-  --color-primary-bg-gradient: "var(--primary-bg-gradient)";
+/* @theme {
+  --color-primary-bg: "var(--primary-bg)";
+  --color-secondary-bg: "var(--secondary-bg)";
+  --color-secondary-bg-two: "var(--secondary-bg-two)";
   --color-primary-text: "var(--primary-text)";
+  --color-secondary-text: "var(--secondary-text)";
+} */
+
+
+.icon-container {
+  /* size & rounding inherited via Tailwind’s w-10 h-10 rounded-xl */
+  background: var(--secondary-bg-two);   /* same as your page panels */
+  box-shadow: var(--shadow-1);           /* give it depth */
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-1);
 }
+
+.icon-container::before {
+  /* remove the inset pseudo in normal state */
+  content: none;
+}
+
+.icon-container:hover {
+  /* on hover, switch to the gradient border effect */
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-1);
+}
+
+.icon-container:hover::before {
+  /* now re-introduce the inset gradient fill */
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+
