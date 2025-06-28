@@ -19,7 +19,7 @@ const faqs = [
       "Absolutely. I craft responsive UIs with React/Next.js on the front-end, and build RESTful or GraphQL APIs using Express and Node.js on the back-end.",
   },
   {
-    question: "What’s your approach to database design?",
+    question: "What&rsquo;s your approach to database design?",
     answer:
       "I design schemas for MongoDB that balance normalization and performance, using indexes and aggregation pipelines where appropriate.",
   },

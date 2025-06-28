@@ -26,7 +26,7 @@ function Doing() {
     <div>
       <h3 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
         <span className="text-[var(--secondary-text)]">
-          What I’m <span className="text-[var(--primary-text)]">Doing?</span>
+          What I&rsquo;m Doing? <span className="text-[var(--primary-text)]">Doing?</span>
         </span>
       </h3>
 
