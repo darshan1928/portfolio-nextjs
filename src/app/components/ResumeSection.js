@@ -127,7 +127,7 @@ export default function ResumeSection() {
       {/* Section Header */}
       <header>
         <h3 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
-          <span className="text-[var(--secondary-text)]">What's</span>
+          <span className="text-[var(--secondary-text)]">What&rsquo;s</span>
           <span className="block text-[var(--secondary-text)]">
             My <span className="text-[var(--primary-text)]">Experience</span>
           </span>
