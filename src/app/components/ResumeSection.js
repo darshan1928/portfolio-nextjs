@@ -126,14 +126,16 @@ export default function ResumeSection() {
     >
       {/* Section Header */}
       <header>
-        <h2 className="text-3xl md:text-4xl font-bold text-[var(--secondary-text)] mb-4 inline-block relative pb-2">
-          Resume
-          <span className="absolute bottom-0 left-0 h-1 w-16 bg-[var(--text-gradient-yellow)] rounded-full" />
-        </h2>
+        <h3 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
+          <span className="text-[var(--secondary-text)]">What's</span>
+          <span className="block text-[var(--secondary-text)]">
+            My <span className="text-[var(--primary-text)]">Experience</span>
+          </span>
+        </h3>
       </header>
 
       {/* Education */}
-      <section className="space-y-8">
+      {/* <section className="space-y-8">
         <div className="flex items-center space-x-4">
           <div className="relative flex-none rounded-xl p-3 bg-[var(--border-gradient-onyx)] shadow-sm">
             <div className="absolute inset-1 bg-[var(--secondary-bg)] rounded-xl" />
@@ -147,7 +149,7 @@ export default function ResumeSection() {
           </h3>
         </div>
         <Timeline items={education} />
-      </section>
+      </section> */}
 
       {/* Experience */}
       <section className="space-y-8">
@@ -159,9 +161,9 @@ export default function ResumeSection() {
               className="relative text-[var(--primary-text)] text-2xl"
             />
           </div>
-          <h3 className="text-2xl font-semibold text-[var(--secondary-text)]">
+          {/* <h3 className="text-2xl font-semibold text-[var(--secondary-text)]">
             Experience
-          </h3>
+          </h3> */}
         </div>
         <Timeline items={experience} />
       </section>

@@ -46,38 +46,56 @@ export default function Navbar() {
       </nav>
 
       {/* Desktop nav */}
-      <nav className="hidden md:flex justify-between items-center w-full max-w-[1140px] mx-auto px-4 mt-8 mb-4 ">
+      <nav className="hidden md:flex justify-between items-center w-full max-w-[1140px] mx-auto pl-4 mb-4 ">
         {/* Active label on the left */}
-        <div className="text-[var(--secondary-text)] text-xl font-semibold">
+        <div
+          className={`
+            pb-3
+    inline-block
+    text-[var(--secondary-text)]
+    text-3xl font-semibold
+    relative
+    border-0                   
+    after:content-['']
+    after:block
+    after:absolute
+    after:bottom-0
+    after:left-0
+    after:w-[60%]
+    after:border-b-2
+    after:border-[var(--primary-text)]
+    
+  `}
+        >
           {items.find((item) => item.href === pathname)?.label || "About"}
         </div>
 
-        {/* All tabs on the right */}
-        <ul className="flex space-x-8">
-          {items.map(({ label, href }) => {
-            const isActive = pathname === href;
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={`
-                    text-[var(--light-gray)]
-                    pb-2
-                    transition-colors duration-[var(--transition-1)]
-                    hover:text-[var(--light-gray-70)]
-                    ${
-                      isActive
-                        ? "border-b-2 border-[var(--orange-yellow-crayola)] text-[var(--orange-yellow-crayola)]"
-                        : ""
-                    }
-                  `}
-                >
-                  {label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        {/* Right-side wrapper */}
+        <div className="bg-[var(--secondary-bg-two)] rounded-bl-3xl rounded-tr-[32px]">
+          <ul className="flex space-x-8 px-6 py-2">
+            {items.map(({ label, href }) => {
+              const isActive = pathname === href;
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`
+                inline-block
+                transition-colors duration-[var(--transition-1)]
+                ${
+                  isActive
+                    ? "font-semibold text-[var(--primary-text)] border-b-2 border-[var(--primary-text)] pb-1"
+                    : "text-[var(--secondary-text)] hover:text-[var(--primary-text)] pb-1"
+                }
+              `}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </nav>
     </>
   );

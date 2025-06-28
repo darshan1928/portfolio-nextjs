@@ -1,12 +1,29 @@
-// app/components/ToolsSection.jsx
+// app/components/ToolsSection.js
 "use client";
 
 import { motion } from "framer-motion";
-
+import {
+  SiMongodb,
+  SiNodedotjs,
+  SiExpress,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiPython,
+  SiFastapi,
+  SiRedis,
+  SiPostman,
+  SiFirebase,
+  SiTailwindcss,
+  SiPostgresql,
+  SiGit,
+  SiSocketdotio,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 const sectionVariants = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.06 },
   },
   exit: {
     transition: { staggerChildren: 0.05, when: "afterChildren" },
@@ -28,8 +45,25 @@ const iconVariants = {
   },
   exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } },
 };
-
-export default function ToolsSection({ tools }) {
+const TOOLS = [
+  { icon: SiMongodb, name: "MongoDB" },
+  { icon: SiPostgresql, name: "PostgreSQL" },
+  { icon: FaAws, name: "AWS" },
+  { icon: SiGit, name: "Git" },
+  { icon: SiNodedotjs, name: "Node.js" },
+  { icon: SiExpress, name: "Express.js" },
+  { icon: SiJavascript, name: "JavaScript" },
+  { icon: SiReact, name: "React.js" },
+  { icon: SiNextdotjs, name: "Next.js" },
+  { icon: SiPython, name: "Python" },
+  { icon: SiFastapi, name: "FastAPI" },
+  { icon: SiRedis, name: "Redis" },
+  { icon: SiPostman, name: "Postman" },
+  { icon: SiFirebase, name: "Firebase" },
+  { icon: SiTailwindcss, name: "Tailwind" },
+  { icon: SiSocketdotio, name: "Socket.IO" },
+];
+export default function ToolsSection() {
   return (
     <motion.section
       variants={sectionVariants}
@@ -57,7 +91,7 @@ export default function ToolsSection({ tools }) {
         variants={sectionVariants}
         className="grid gap-4 grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8"
       >
-        {tools.map(({ icon: Icon, name }) => (
+        {TOOLS?.map(({ icon: Icon, name }) => (
           <motion.div
             key={name}
             variants={iconVariants}

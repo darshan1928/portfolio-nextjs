@@ -1,18 +1,35 @@
-// app/components/DeveloperCard.jsx
+// app/components/DeveloperCard.js
 "use client";
-import "../globals.css";
 import { useState } from "react";
 import Image from "next/image";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMail, FiPhone, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
-
+import Link from "next/link";
+const CURRENT_YEAR = new Date().getFullYear();
 export default function DeveloperCard() {
   const [expanded, setExpanded] = useState(false);
 
+  const socialLinks = [
+    {
+      Icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/darshanraj1928",
+      label: "LinkedIn",
+    },
+    {
+      Icon: FaTwitter,
+      href: "https://twitter.com/CallMe_Darshan",
+      label: "Twitter",
+    },
+    {
+      Icon: FaGithub,
+      href: "https://github.com/darshan1928",
+      label: "GitHub",
+    },
+  ];
   const contacts = [
-    { label: "Email", icon: FiMail, value: "you@example.com" },
-    { label: "Phone", icon: FiPhone, value: "+1 234 567 8901" },
+    { label: "Email", icon: FiMail, value: "darshanrajendran28@gmail.com" },
+    { label: "Phone", icon: FiPhone, value: "+91 9048362395" },
     { label: "Location", icon: GoLocation, value: "Kerala, India" },
   ];
 
@@ -24,6 +41,9 @@ export default function DeveloperCard() {
     bg-[var(--secondary-bg)] rounded-4xl overflow-hidden
     md:h-[95%]
     flex flex-col
+    
+      border-[2px] 
+    border-[var(--secondary-bg-two)]
   `}
     >
       {/** HEADER (always visible) **/}
@@ -83,55 +103,59 @@ export default function DeveloperCard() {
         <div className="mt-4 flex flex-col space-y-6 text-[var(--secondary-text)] text-sm md:text-sm">
           {contacts.map(({ label, icon: Icon, value }) => (
             <div key={label} className="flex items-start space-x-3">
-              <div className="icon-container w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center">
+              <div className="icon-container w-10 h-10 md:w-12 md:h-12 rounded-xl flex-shrink-0 flex items-center justify-center">
                 <Icon className="text-[var(--primary-text)] text-2xl" />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <span className="text-xs font-medium text-[var(--secondary-text)]">
                   {label}
                 </span>
-                <span>{value}</span>
+                <span className="break-words">{value}</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Social Icons */}
-        <div className="mt-6 flex justify-center space-x-4 text-2xl text-[var(--secondary-text)]">
-          <a href="#" className="hover:text-[var(--primary-text)]">
-            <FaLinkedin />
-          </a>
-          <a href="#" className="hover:text-[var(--primary-text)]">
-            <FaTwitter />
-          </a>
-          <a href="#" className="hover:text-[var(--primary-text)]">
-            <FaGithub />
-          </a>
+        <div className="mt-6 flex justify-center space-x-4 text-2xl">
+          {socialLinks?.map(({ Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--secondary-text)] hover:text-[var(--primary-text)]"
+              aria-label={label}
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
 
         {/* Spacer */}
         <div className="flex-1 " />
 
         {/* Button */}
-        <button
-          className="
-          w-full
-            mt-6
-            bg-[var(--primary-text)]
-            text-[var(--secondary-bg-two)]
-            px-6 py-2 rounded-full
-            hover:opacity-90 transition
-          "
-        >
-          Let’s Talk
-        </button>
+        <Link href="/contact" passHref>
+          <button
+            className="
+          w-full mt-6
+          bg-[var(--primary-text)]
+          text-[var(--secondary-bg-two)]
+          px-6 py-2 rounded-full
+          hover:opacity-90 transition
+        "
+          >
+            Let’s Talk
+          </button>
+        </Link>
 
         {/* Divider */}
         <div className="mt-8">
           <hr className="w-full border-t-[3px] border-[var(--secondary-bg-two)]" />
           <div className="mt-4 text-xs text-center text-[var(--secondary-text)]">
-            &copy; {new Date().getFullYear()} All rights reserved.
+            &copy; {CURRENT_YEAR} All rights reserved.
           </div>
         </div>
       </div>

@@ -1,12 +1,11 @@
-// app/contact/page.js
-"use client";
+// app/projects/page.js
 
 import { WrenchIcon } from "@heroicons/react/24/outline";
 
-// export const metadata = {
-//   title: "Blog • Under Construction",
-//   description: "Our blog is coming soon!",
-// };
+export const metadata = {
+  title: "Blog • Under Construction",
+  description: "Our blog is coming soon!",
+};
 
 export default function ProjectPage() {
   return (

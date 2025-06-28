@@ -1,9 +1,9 @@
 // app/layout.js
 import "./globals.css";
 import Providers from "./components/Providers";
-import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
 import DeveloperCard from "./components/DeveloperCard";
+import Navbar from "./components/Navbar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,12 +31,18 @@ export default function RootLayout({ children }) {
               <DeveloperCard />
 
               <div
-                className="w-full md:h-full md:flex-1 bg-[var(--secondary-bg)] rounded-tl-4xl rounded-tr-4xl
-                     flex flex-col"
+                className="w-full md:h-full md:flex-1 bg-[var(--secondary-bg)] rounded-tl-4xl rounded-tr-4xl border-[2px]
+                     flex flex-col border-[var(--secondary-bg-two)]"
               >
                 <Navbar />
 
-                <div className="flex-1 overflow-y-auto p-4">{children}</div>
+                <div
+                  className="flex-1 overflow-y-auto   
+  
+     p-4"
+                >
+                  {children}
+                </div>
               </div>
             </div>
           </div>

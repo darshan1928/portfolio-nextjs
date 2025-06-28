@@ -36,13 +36,11 @@ export default function FAQAccordion() {
   return (
     <section className="mt-12 max-w-[1140px] mx-auto px-4">
       <h3 className="text-4xl md:text-5xl font-bold mb-12 leading-tight">
-  <span className="text-[var(--secondary-text)]">Frequently</span>
-  <span className="block text-[var(--secondary-text)]">
-    Asked{" "}
-    <span className="text-[var(--primary-text)]">Questions</span>
-  </span>
-</h3>
-
+        <span className="text-[var(--secondary-text)]">Frequently</span>
+        <span className="block text-[var(--secondary-text)]">
+          Asked <span className="text-[var(--primary-text)]">Questions</span>
+        </span>
+      </h3>
 
       <div className="space-y-4">
         {faqs.map(({ question, answer }, idx) => {

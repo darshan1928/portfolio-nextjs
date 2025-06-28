@@ -1,40 +1,40 @@
-"use client";
+// app/contacts/page.js
+
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
-// export const metadata = {
-//   title: "Contact • Darshan Raj",
-//   description: "Get in touch with Darshan Raj",
-// };
+export const metadata = {
+  title: "Contact • Darshan Raj",
+  description: "Get in touch with Darshan Raj",
+};
+const CONTACTS = [
+  {
+    href: "mailto:darshanrajendran28@gmail.com",
+    title: "Email",
+    description: "Shoot me a message anytime!",
+    Icon: EnvelopeIcon,
+  },
+  {
+    href: "https://twitter.com/CallMe_Darshan",
+    title: "Twitter",
+    description: "Tweet at me or send me a DM.",
+    Icon: FaTwitter,
+  },
+  {
+    href: "https://linkedin.com/in/darshanraj1928",
+    title: "LinkedIn",
+    description: "Let’s connect professionally.",
+    Icon: FaLinkedin,
+  },
+  {
+    href: "https://github.com/darshan1928",
+    title: "GitHub",
+    description: "Check out my open-source work.",
+    Icon: FaGithub,
+  },
+];
 
 export default function ContactPage() {
-  const contacts = [
-    {
-      href: "mailto:youremail@example.com",
-      title: "Email",
-      description: "Shoot me a message anytime!",
-      Icon: EnvelopeIcon,
-    },
-    {
-      href: "https://twitter.com/your_twitter",
-      title: "Twitter",
-      description: "Tweet at me or send me a DM.",
-      Icon: FaTwitter,
-    },
-    {
-      href: "https://linkedin.com/in/your_linkedin",
-      title: "LinkedIn",
-      description: "Let’s connect professionally.",
-      Icon: FaLinkedin,
-    },
-    {
-      href: "https://github.com/your_github",
-      title: "GitHub",
-      description: "Check out my open-source work.",
-      Icon: FaGithub,
-    },
-  ];
-
   return (
     <section
       id="contact"
@@ -54,7 +54,7 @@ export default function ContactPage() {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {contacts.map(({ href, title, description, Icon }) => (
+          {CONTACTS.map(({ href, title, description, Icon }) => (
             <a
               key={href}
               href={href}
