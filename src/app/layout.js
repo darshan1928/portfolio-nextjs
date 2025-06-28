@@ -32,17 +32,11 @@ export default function RootLayout({ children }) {
 
               <div
                 className="w-full md:h-full md:flex-1 bg-[var(--secondary-bg)] rounded-tl-4xl rounded-tr-4xl border-[2px]
-                     flex flex-col border-[var(--secondary-bg-two)]"
+                     flex flex-col border-[var(--secondary-bg-two)] pb-3  md:pb-4"
               >
                 <Navbar />
 
-                <div
-                  className="flex-1 overflow-y-auto   
-  
-     p-4"
-                >
-                  {children}
-                </div>
+                <div className="flex-1 overflow-y-auto p-4">{children}</div>
               </div>
             </div>
           </div>
