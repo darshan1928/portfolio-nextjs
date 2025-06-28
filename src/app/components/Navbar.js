@@ -27,7 +27,7 @@ export default function Navbar() {
                   className={`
                     block
                     text-[var(--light-gray)]
-                    py-[12px]
+                    // py-[12px]
                     transition-colors duration-[var(--transition-1)]
                     hover:text-[var(--light-gray-70)]
                     ${
