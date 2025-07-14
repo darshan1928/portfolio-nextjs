@@ -51,7 +51,7 @@ export default function DeveloperCard() {
         <div className="flex items-center space-x-3 md:flex-col md:space-x-0 md:space-y-2 md:items-center">
           <div className="w-16 h-16 md:w-32 md:h-32 rounded-full overflow-hidden bg-[var(--secondary-bg-two)]">
             <Image
-              src="https://via.placeholder.com/150"
+              src="/linkedin-dp-edited.jpg"
               alt="Avatar"
               width={128}
               height={128}
