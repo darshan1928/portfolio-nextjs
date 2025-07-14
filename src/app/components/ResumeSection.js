@@ -97,23 +97,24 @@ export default function ResumeSection() {
     },
   ];
 
-  const experience = [
-    {
-      title: "Creative Director",
-      period: "2015 — Present",
-      desc: "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.",
-    },
-    {
-      title: "Art Director",
-      period: "2013 — 2015",
-      desc: "Nemo enim ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.",
-    },
-    {
-      title: "Web Designer",
-      period: "2010 — 2013",
-      desc: "Nemo enim ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.",
-    },
-  ];
+const experience = [
+  {
+    title: "FullStack Developer in Aithemis",
+    period: "May 2024 — Apr 2025",
+    desc: "Architected and implemented end-to-end microservices using Node.js, Express, and FastAPI on the backend, and React.js with Next.js on the frontend, driving a 20% increase in user engagement.",
+  },
+  {
+    title: "Front End Developer Intern in TechPranee",
+    period: "Jan 2024 — Mar 2024",
+    desc: "Built responsive, accessible UI components using React.js, Next.js, and Material-UI; collaborated with designers to implement pixel-perfect layouts and improved page load times by 35%.",
+  },
+  {
+    title: "Full Stack Developer Intern in Entri Elevate",
+    period: "Dec 2022 — Oct 2023",
+    desc: "Developed interactive, real-time features using React.js with Tailwind CSS and Chakra UI, integrated Socket.io for live updates, and built RESTful APIs with Express.js, Node.js, and MongoDB.",
+  },
+];
+
 
   return (
     <motion.article
